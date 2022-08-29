@@ -19,29 +19,29 @@
  `kubectl create ns tomcat-namespace-nautilus`
 
  2. Create a deployment yaml file called deploy.yaml
-`
-apiVersion: apps/v1
+
+`apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: tomcat-deployment-devops~
   namespace: tomcat-namespace-devops~
-spec: 
+spec:
   replicas: 1
-  selector: 
-    matchLabels: 
+  selector:
+    matchLabels:
       app: tomcat
-  template: 
-    metadata: 
-      labels: 
+  template:
+    metadata:
+      labels:
         app: tomcat
-    spec: 
-      containers: 
+    spec:
+      containers:
         - image: gcr.io/kodekloud/centos-ssh-enabled:tomcat
           name: tomcat-container-devops~
-          ports: 
-            - containerPort: 80
-`
+          ports:
+            - containerPort: 80`
 ---
+
 `apiVersion: v1
 kind: Service
 metadata:
@@ -55,7 +55,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 32227
-`
+      nodePort: 32227`
+   
 3. Run
-'kubectl apply -f deploy.yaml`
+`kubectl apply -f deploy.yaml`
