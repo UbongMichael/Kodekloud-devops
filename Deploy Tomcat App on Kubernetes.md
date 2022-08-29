@@ -19,7 +19,7 @@
  `kubectl create ns tomcat-namespace-nautilus`
 
  2. Create a deployment yaml file called deploy.yaml
---- 
+`
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
