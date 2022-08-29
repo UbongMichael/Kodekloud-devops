@@ -40,9 +40,9 @@ spec:
           name: tomcat-container-devops~
           ports: 
             - containerPort: 80
-
+`
 ---
-apiVersion: v1
+`apiVersion: v1
 kind: Service
 metadata:
   name: tomcat-service-devops
