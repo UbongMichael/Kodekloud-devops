@@ -23,8 +23,8 @@
 `apiVersion: apps/v1`
 `kind: Deployment`
 `metadata:`
-  `name: tomcat-deployment-devops`~
-  `namespace: tomcat-namespace-devops`~
+  `name: tomcat-deployment-devops`
+  `namespace: tomcat-namespace-devops`
 `spec:`
   `replicas: 1`
   `selector:`
