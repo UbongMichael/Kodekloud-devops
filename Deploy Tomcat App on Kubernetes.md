@@ -1,4 +1,4 @@
- A new java-based application is ready to be deployed on a Kubernetes cluster. The development team had a meeting with the DevOps team to share the requirements and application scope. The team is ready to setup an application stack for it under their existing cluster. Below you can find the details for this:
+A new java-based application is ready to be deployed on a Kubernetes cluster. The development team had a meeting with the DevOps team to share the requirements and application scope. The team is ready to setup an application stack for it under their existing cluster. Below you can find the details for this:
 
  Create a namespace named tomcat-namespace-devops.
 
@@ -16,46 +16,51 @@
 
  1. Create a namespace
 
- `kubectl create ns tomcat-namespace-nautilus`
+```
+ kubectl create ns tomcat-namespace-nautilus
+```
 
  2. Create a deployment yaml file called deploy.yaml
 
-`apiVersion: apps/v1`
-`kind: Deployment`
-`metadata:`
-  `name: tomcat-deployment-devops`
-  `namespace: tomcat-namespace-devops`
-`spec:`
-  `replicas: 1`
-  `selector:`
-    `matchLabels:`
-      `app: tomcat`
-  `template:`
-    `metadata:`
-      `labels:`
-        `app: tomcat`
-    `spec:`
-      `containers:`
-        `- image: gcr.io/kodekloud/centos-ssh-enabled:tomcat`
-          `name: tomcat-container-devops`
-          `ports:`
-            `- containerPort: 80`
-`---`
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-deployment-devops~
+  namespace: tomcat-namespace-devops~
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tomcat
+  template:
+    metadata:
+      labels:
+        app: tomcat
+    spec:
+      containers:
+        - image: gcr.io/kodekloud/centos-ssh-enabled:tomcat
+          name: tomcat-container-devops~
+          ports:
+            - containerPort: 80
+---
 
-`apiVersion: v1`
-`kind: Service`
-`metadata:`
-  `name: tomcat-service-devops`
-  `namespace: tomcat-namespace-devops`
-`spec:`
-  `type: NodePort`
-  `selector:`
-    `app: tomcat`
-  `ports:`
-    `- protocol: TCP`
-      `port: 80`
-      `targetPort: 8080`
-      `nodePort: 32227`
-
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-service-devops
+  namespace: tomcat-namespace-devops
+spec:
+  type: NodePort
+  selector:
+    app: tomcat
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      nodePort: 32227
+```
 3. Run
-`kubectl apply -f deploy.yaml`
+```
+kubectl apply -f deploy.yaml
+```
