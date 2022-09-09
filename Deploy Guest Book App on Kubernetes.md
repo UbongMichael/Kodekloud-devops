@@ -57,7 +57,8 @@ Note: The kubectl utility on jump_host has been configured to work with the kube
 
 Solution
 ================================================================
-```apiVersion: apps/v1
+```
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-master
