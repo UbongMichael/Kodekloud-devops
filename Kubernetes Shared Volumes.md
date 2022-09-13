@@ -65,7 +65,7 @@ kubectl get pods -o wide
 ```
 Exec into the containers
 ```
-kubectl exec -it volume-share-datacenter -c volume-container-datacenter-1 --/bin/bash
+kubectl exec -it volume-share-datacenter -c volume-container-datacenter-1 -- /bin/bash
 ```
 
 Write any content to the path specified
