@@ -22,6 +22,7 @@ docker pull busybox:musl
 ```
 docker ps
 ```
+```
 docker images
 ```
 ```
