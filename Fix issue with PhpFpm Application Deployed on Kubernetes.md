@@ -58,6 +58,7 @@ kubectl get cm
 ```kubectl describe cm
 ```
 -  Check before restart and still not working 
+
 ```
 kubectl get po
 ```
