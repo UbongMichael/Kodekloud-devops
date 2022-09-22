@@ -55,7 +55,8 @@ kubectl logs nginx-phpfpm-dp-5cccd45499-5r2pr -c nginx-container
 ```
 kubectl get cm
 ```
-```kubectl describe cm
+```
+kubectl describe cm
 ```
 -  Check before restart and still not working 
 
@@ -72,7 +73,8 @@ kubectl rollout restart deployment nginx-phpfpm-dp
 ```
 kubectl get po
 ```
-```kubectl cp /tmp/index.php pod-name:.var/www/html -c nginx-container
+```
+kubectl cp /tmp/index.php pod-name:.var/www/html -c nginx-container
 ```
 ```
 kubectl cp /tmp/index.php nginx-phpfpm-dp-6c6d8b4df4-mz5gw:/var/www/html -c nginx-container
