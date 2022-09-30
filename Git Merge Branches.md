@@ -25,6 +25,7 @@ cd /usr/src/kodekloudrepos/official
 git status
 ```
 - Create new branch
+```
 git checkout -b nautilus
 ```
 - Copy the /tmp/index.html file (on storage server itself)
